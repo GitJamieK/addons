@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-05-02T23:38:34.894Z",
-  "source": "CurseForge Core API",
+  "generatedAt": "2026-05-03T00:00:00.000Z",
+  "source": "Manual seed with CurseForge page fallbacks",
   "addons": {
     "oathbound": {
       "projectId": 1465925,
+      "slug": "oathbound",
       "pageUrl": "https://www.curseforge.com/wow/addons/oathbound",
       "fileId": 8023035,
       "fileName": "Oathbound-v1.4.2.zip",
@@ -11,9 +12,70 @@
       "latestVersion": "v1.4.2",
       "latestVersionLabel": "Latest v1.4.2",
       "gameVersion": "1.15.8",
+      "gameVersions": [
+        "1.15.8"
+      ],
       "gameVersionLabel": "Classic 1.15.8",
+      "gameVersionLabels": [
+        "Classic 1.15.8"
+      ],
       "updatedAt": "2026-05-01T20:26:41.727Z",
-      "updatedLabel": "Updated May 1, 2026"
+      "updatedLabel": "Updated May 1, 2026",
+      "factLabels": [
+        "Latest v1.4.2",
+        "Classic 1.15.8",
+        "Updated May 1, 2026"
+      ]
+    },
+    "addonsearch": {
+      "projectId": 1519225,
+      "slug": "addonsearch-addon-search",
+      "pageUrl": "https://www.curseforge.com/wow/addons/addonsearch-addon-search",
+      "fileName": "AddonSearch-v0.4.zip",
+      "releaseType": "Release",
+      "latestVersion": "v0.4",
+      "latestVersionLabel": "Latest v0.4",
+      "gameVersion": "1.15.8",
+      "gameVersions": [
+        "1.15.8",
+        "2.5.5"
+      ],
+      "gameVersionLabel": "Classic 1.15.8",
+      "gameVersionLabels": [
+        "Classic 1.15.8",
+        "TBC 2.5.5"
+      ],
+      "updatedAt": "2026-04-21T00:00:00.000Z",
+      "updatedLabel": "Updated Apr 21, 2026",
+      "factLabels": [
+        "Latest v0.4",
+        "Classic 1.15.8",
+        "TBC 2.5.5",
+        "Updated Apr 21, 2026"
+      ]
+    },
+    "hidechatbuttonreborn": {
+      "slug": "hidechatbuttonreborn",
+      "pageUrl": "https://www.curseforge.com/wow/addons/hidechatbuttonreborn",
+      "fileName": "HideChatButtonReborn-v1.1.zip",
+      "releaseType": "Release",
+      "latestVersion": "v1.1",
+      "latestVersionLabel": "Latest v1.1",
+      "gameVersion": "1.15.8",
+      "gameVersions": [
+        "1.15.8"
+      ],
+      "gameVersionLabel": "Classic 1.15.8",
+      "gameVersionLabels": [
+        "Classic 1.15.8"
+      ],
+      "updatedAt": "2026-04-14T00:00:00.000Z",
+      "updatedLabel": "Updated Apr 14, 2026",
+      "factLabels": [
+        "Latest v1.1",
+        "Classic 1.15.8",
+        "Updated Apr 14, 2026"
+      ]
     }
   }
 }

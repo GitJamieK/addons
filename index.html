@@ -55,9 +55,9 @@
               <div class="addon-panel-shell" id="oathbound-details" aria-hidden="true">
                 <div class="addon-panel">
                   <div class="addon-facts" aria-label="Oathbound details" data-curseforge-addon="oathbound">
-                    <span data-curseforge-field="latestVersionLabel">Latest v1.4.2</span>
-                    <span data-curseforge-field="gameVersionLabel">Classic 1.15.8</span>
-                    <span data-curseforge-field="updatedLabel">Updated May 1, 2026</span>
+                    <span>Latest v1.4.2</span>
+                    <span>Classic 1.15.8</span>
+                    <span>Updated May 1, 2026</span>
                   </div>
                   <p>
                     A Classic Hardcore ruleset addon built around oath runs: pick one damaging ability per bracket,
@@ -155,10 +155,11 @@
               </div>
               <div class="addon-panel-shell" id="addonsearch-details" aria-hidden="true">
                 <div class="addon-panel">
-                  <div class="addon-facts" aria-label="AddonSearch details">
+                  <div class="addon-facts" aria-label="AddonSearch details" data-curseforge-addon="addonsearch">
                     <span>Latest v0.4</span>
                     <span>Classic 1.15.8</span>
                     <span>TBC 2.5.5</span>
+                    <span>Updated Apr 21, 2026</span>
                   </div>
                   <p>
                     A small search field for Blizzard's default AddOns list, keeping the original window intact while
@@ -209,7 +210,7 @@
               </div>
               <div class="addon-panel-shell" id="hidechatbuttonreborn-details" aria-hidden="true">
                 <div class="addon-panel">
-                  <div class="addon-facts" aria-label="HideChatButtonReborn details">
+                  <div class="addon-facts" aria-label="HideChatButtonReborn details" data-curseforge-addon="hidechatbuttonreborn">
                     <span>Latest v1.1</span>
                     <span>Classic 1.15.8</span>
                     <span>Updated Apr 14, 2026</span>
@@ -261,6 +262,26 @@
       let viewerImages = [];
       let viewerIndex = 0;
 
+      const createFactChip = (label) => {
+        const chip = document.createElement("span");
+
+        chip.textContent = label;
+
+        return chip;
+      };
+
+      const getFactLabels = (addon) => {
+        if (Array.isArray(addon.factLabels)) {
+          return addon.factLabels.filter((label) => typeof label === "string" && label.trim());
+        }
+
+        return [
+          addon.latestVersionLabel,
+          addon.gameVersionLabel,
+          addon.updatedLabel,
+        ].filter((label) => typeof label === "string" && label.trim());
+      };
+
       const updateAddonFacts = (metadata) => {
         if (!metadata || !metadata.addons) {
           return;
@@ -273,13 +294,11 @@
             return;
           }
 
-          facts.querySelectorAll("[data-curseforge-field]").forEach((fact) => {
-            const value = addon[fact.dataset.curseforgeField];
+          const labels = getFactLabels(addon);
 
-            if (typeof value === "string" && value.trim()) {
-              fact.textContent = value;
-            }
-          });
+          if (labels.length > 0) {
+            facts.replaceChildren(...labels.map(createFactChip));
+          }
         });
       };
 
