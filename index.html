@@ -54,10 +54,10 @@
               </div>
               <div class="addon-panel-shell" id="oathbound-details" aria-hidden="true">
                 <div class="addon-panel">
-                  <div class="addon-facts" aria-label="Oathbound details">
-                    <span>Latest v1.4.1</span>
-                    <span>Classic 1.15.8</span>
-                    <span>Updated Apr 28, 2026</span>
+                  <div class="addon-facts" aria-label="Oathbound details" data-curseforge-addon="oathbound">
+                    <span data-curseforge-field="latestVersionLabel">Latest v1.4.2</span>
+                    <span data-curseforge-field="gameVersionLabel">Classic 1.15.8</span>
+                    <span data-curseforge-field="updatedLabel">Updated May 1, 2026</span>
                   </div>
                   <p>
                     A Classic Hardcore ruleset addon built around oath runs: pick one damaging ability per bracket,
@@ -261,6 +261,46 @@
       let viewerImages = [];
       let viewerIndex = 0;
 
+      const updateAddonFacts = (metadata) => {
+        if (!metadata || !metadata.addons) {
+          return;
+        }
+
+        document.querySelectorAll("[data-curseforge-addon]").forEach((facts) => {
+          const addon = metadata.addons[facts.dataset.curseforgeAddon];
+
+          if (!addon) {
+            return;
+          }
+
+          facts.querySelectorAll("[data-curseforge-field]").forEach((fact) => {
+            const value = addon[fact.dataset.curseforgeField];
+
+            if (typeof value === "string" && value.trim()) {
+              fact.textContent = value;
+            }
+          });
+        });
+      };
+
+      const loadCurseForgeMetadata = async () => {
+        const metadataUrl = new URL("./assets/data/addon-meta.json", window.location.href);
+
+        metadataUrl.searchParams.set("cache", Date.now().toString());
+
+        try {
+          const response = await fetch(metadataUrl, { cache: "no-store" });
+
+          if (!response.ok) {
+            return;
+          }
+
+          updateAddonFacts(await response.json());
+        } catch (error) {
+          // Keep the static fallback values if generated metadata is unavailable.
+        }
+      };
+
       const syncViewerThumbs = () => {
         const thumbs = viewerThumbs.querySelectorAll(".viewer-thumb");
 
@@ -374,6 +414,8 @@
           openImageViewer(image);
         });
       });
+
+      loadCurseForgeMetadata();
 
       imageViewer.addEventListener("click", (event) => {
         if (event.target.closest(".viewer-image, .viewer-arrow, .viewer-thumbs")) {
