@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-05-03T09:40:00.035Z",
+  "generatedAt": "2026-05-23T09:38:38.263Z",
   "source": "CurseForge Core API",
   "addons": {
     "oathbound": {
       "projectId": 1465925,
       "slug": "oathbound",
       "pageUrl": "https://www.curseforge.com/wow/addons/oathbound",
-      "fileId": 8023035,
-      "fileName": "Oathbound-v1.4.2.zip",
+      "fileId": 8131937,
+      "fileName": "Oathbound-v1.4.5.zip",
       "releaseType": "Release",
-      "latestVersion": "v1.4.2",
-      "latestVersionLabel": "Latest v1.4.2",
+      "latestVersion": "v1.4.5",
+      "latestVersionLabel": "Latest v1.4.5",
       "gameVersion": "1.15.8",
       "gameVersions": [
         "1.15.8"
@@ -19,12 +19,12 @@
       "gameVersionLabels": [
         "Classic 1.15.8"
       ],
-      "updatedAt": "2026-05-01T20:26:41.727Z",
-      "updatedLabel": "Updated May 1, 2026",
+      "updatedAt": "2026-05-23T09:21:08.97Z",
+      "updatedLabel": "Updated May 23, 2026",
       "factLabels": [
-        "Latest v1.4.2",
+        "Latest v1.4.5",
         "Classic 1.15.8",
-        "Updated May 1, 2026"
+        "Updated May 23, 2026"
       ]
     },
     "addonsearch": {
